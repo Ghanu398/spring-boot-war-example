@@ -5,10 +5,12 @@ tools {
 }
     stages{
         stage("testing"){
- parameters{
-    booleanParam(name: 'test', defaultValue: true, description: '')
+ 
  }
             steps{
+
+                parameters{
+    booleanParam(name: 'test', defaultValue: true, description: '')
                 // if ($name -eq true ) {
                 //     sh "mvn test"
                 // } else {
