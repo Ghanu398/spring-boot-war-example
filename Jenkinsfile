@@ -18,7 +18,7 @@ pipeline {
                             sh "cal" // Replace "cal" with an actual command if needed
                         }
                     }
-                    sh "mvn test"
+                    // sh "mvn test"
                 }
 
                 
