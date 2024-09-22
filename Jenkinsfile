@@ -5,9 +5,18 @@ tools {
 }
     stages{
         stage("testing"){
-
+ parameters{
+    booleanParam(name: 'test', defaultValue: true, description: '')
+ }
             steps{
-                sh "mvn test"
+                if ($name = 'test') {
+                    sh "mvn test"
+                } else {
+                   sh " echo 'job does not executed and failling'"
+                   sh cal
+
+                }
+                
             }
             
         }
