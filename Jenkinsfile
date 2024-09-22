@@ -13,7 +13,7 @@ tools {
             steps{
 
                
-                if (prams.test == true ) {
+                if (params.test == true ) {
                     sh "mvn test"
                 } else {
                    sh " echo 'job does not execute and failling'"
