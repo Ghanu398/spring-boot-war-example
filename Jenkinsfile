@@ -13,15 +13,13 @@ tools {
             steps{
   catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
                
-                // if (params.test == true ) {
-                //     sh "mvn test"
-                // } else {
-                //    sh " echo 'job does not execute and failling'"
-                //    sh cal
+                if (params.test) {
+    sh "mvn test"
+} else {
+    sh "cal"
+}
 
-                // }
-
-                sh "mvn test"
+              
 
   }
                 
