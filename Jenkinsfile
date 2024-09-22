@@ -13,13 +13,13 @@ tools {
             steps{
 
                
-                if (params.test == true ) {
-                    sh "mvn test"
-                } else {
-                   sh " echo 'job does not execute and failling'"
-                   sh cal
+                // if (params.test == true ) {
+                //     sh "mvn test"
+                // } else {
+                //    sh " echo 'job does not execute and failling'"
+                //    sh cal
 
-                }
+                // }
 
                 sh "mvn test"
                 
