@@ -7,7 +7,7 @@ tools {
         stage("testing"){
 
             steps{
-                mvn test
+                sh "mvn test"
             }
             
         }
