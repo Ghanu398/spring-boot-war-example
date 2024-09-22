@@ -45,7 +45,7 @@ tools {
         {
             input{
                 message "Apply or abort"
-                Ok "Apply"
+                ok "Apply"
                 
             }
             steps{
