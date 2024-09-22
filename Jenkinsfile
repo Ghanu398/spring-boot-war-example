@@ -11,6 +11,7 @@ tools {
 
                 parameters{
     booleanParam(name: 'test', defaultValue: true, description: '')
+                }
                 // if ($name -eq true ) {
                 //     sh "mvn test"
                 // } else {
@@ -24,7 +25,7 @@ tools {
             }
             
         }
-    }
+    
     post {
                 always{
                     echo "i will run alway"
