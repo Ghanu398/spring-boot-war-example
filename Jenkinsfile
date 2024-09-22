@@ -9,15 +9,17 @@ pipeline {
     stages {
         stage("testing") {
             steps {
-                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    script {
-                        if (params.test) {
-                            sh "mvn test"
-                        } else {
-                            sh "cal" // Replace "cal" with an actual command if needed
-                        }
-                    }
-                }
+                // catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                //     script {
+                //         if (params.test) {
+                //             sh "mvn test"
+                //         } else {
+                //             sh "cal" // Replace "cal" with an actual command if needed
+                //         }
+                //     }
+                // }
+
+                sh "mvn test"
             }
         }
 
