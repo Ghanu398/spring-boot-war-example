@@ -9,13 +9,15 @@ tools {
     booleanParam(name: 'test', defaultValue: true, description: '')
  }
             steps{
-                if ($name = 'test') {
-                    sh "mvn test"
-                } else {
-                   sh " echo 'job does not executed and failling'"
-                   sh cal
+                // if ($name -eq true ) {
+                //     sh "mvn test"
+                // } else {
+                //    sh " echo 'job does not executed and failling'"
+                //    sh cal
 
-                }
+                // }
+
+                sh "mvn test"
                 
             }
             
