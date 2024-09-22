@@ -3,22 +3,23 @@ pipeline {
 tools {
     maven 'Maven'
 }
+ parameters{
+                        booleanParam(name: 'test', defaultValue: true, description: '')
+                }
     stages{
         stage("testing"){
  
  
             steps{
 
-                parameters{
-    booleanParam(name: 'test', defaultValue: true, description: '')
-                }
-                // if ($name -eq true ) {
-                //     sh "mvn test"
-                // } else {
-                //    sh " echo 'job does not executed and failling'"
-                //    sh cal
+               
+                if (prams.test == true ) {
+                    sh "mvn test"
+                } else {
+                   sh " echo 'job does not execute and failling'"
+                   sh cal
 
-                // }
+                }
 
                 sh "mvn test"
                 
