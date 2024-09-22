@@ -6,7 +6,7 @@ tools {
     stages{
         stage("testing"){
  
- }
+ 
             steps{
 
                 parameters{
@@ -23,6 +23,7 @@ tools {
                 sh "mvn test"
                 
             }
+        }
             
         }
     
