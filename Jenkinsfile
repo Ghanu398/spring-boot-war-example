@@ -11,7 +11,7 @@ tools {
  
  
             steps{
-
+  catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
                
                 // if (params.test == true ) {
                 //     sh "mvn test"
@@ -22,6 +22,8 @@ tools {
                 // }
 
                 sh "mvn test"
+
+  }
                 
             }
         }
@@ -39,18 +41,18 @@ tools {
             }
         }
 
-        //  stage("Deploy_to_prod")
-        // {
-        //     input{
-        //         message "Apply or abort"
-        //         Ok "Apply"
+         stage("Deploy_to_prod")
+        {
+            input{
+                message "Apply or abort"
+                Ok "Apply"
                 
-        //     }
-        //     steps{
+            }
+            steps{
                 
-        //         deploy adapters: [tomcat7(credentialsId: 'tomcat7details', path: '', url: 'http://54.147.188.18:8080/')], contextPath: '/app', war: '**/*.war'
-        //     }
-        // }
+                deploy adapters: [tomcat7(credentialsId: 'tomcat7details', path: '', url: 'http://54.147.188.18:8080/')], contextPath: '/app', war: '**/*.war'
+            }
+        }
             
         }
     
